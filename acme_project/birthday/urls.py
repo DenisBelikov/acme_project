@@ -8,7 +8,10 @@ app_name = 'birthday'
 
 urlpatterns = [
     path('', views.birthday, name='create'),
-]
+    path('list/', views.birthday_list, name='list'),
+    path('<int:pk>/edit/', views.birthday, name='edit'),
+    path('<int:pk>/delete/', views.delete_birthday, name='delete'),
+] 
 
 
 def calculate_birthday_countdown(birthday):
