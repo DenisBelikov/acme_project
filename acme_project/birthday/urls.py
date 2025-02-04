@@ -13,7 +13,7 @@ urlpatterns = [
     path('', views.BirthdayCreateView.as_view(), name='create'),
     path('<int:pk>/edit/', views.birthday, name='edit'),
     path('<int:pk>/delete/', views.delete_birthday, name='delete'),
-] 
+]
 
 
 def calculate_birthday_countdown(birthday):
