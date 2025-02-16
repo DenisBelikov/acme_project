@@ -8,6 +8,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Подключаем бэкенд filebased.EmailBackend:
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+# Указываем директорию, в которую будут сохраняться файлы писем:
+EMAIL_FILE_PATH = BASE_DIR / 'sent_emails'
+
+LOGIN_REDIRECT_URL = 'pages:homepage'
+
 INSTALLED_APPS = [
     'django_bootstrap5',
     'django.contrib.admin',
