@@ -7,6 +7,13 @@ from .forms import BirthdayForm
 from .models import Birthday
 from .utils import calculate_birthday_countdown
 from birthday.models import Birthday
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+
+
+@login_required
+def simple_view(request):
+    return HttpResponse('Страница для залогиненных пользователей!')
 
 
 class HomePage(TemplateView):
@@ -51,4 +58,4 @@ class BirthdayDetailView(DetailView):
         context['birthday_countdown'] = calculate_birthday_countdown(
             self.object.birthday
         )
-        return context 
+        return context
